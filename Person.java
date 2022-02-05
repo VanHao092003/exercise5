@@ -4,10 +4,10 @@ public class Person {
     protected String passport;
 
     
-    public Person(String fullname, String age, String identityCardNumber) {
+    public Person(String fullname, String age, String passport) {
         this.fullname = fullname;
         this.age = age;
-        this.passport = identityCardNumber;
+        this.passport = passport;
     }
 
     public String getFullname() {
@@ -22,11 +22,11 @@ public class Person {
     public void setAge(String age) {
         this.age = age;
     }
-    public String getIdentityCardNumber() {
+    public String getPassport() {
         return passport;
     }
-    public void setIdentityCardNumber(String identityCardNumber) {
-        this.passport = identityCardNumber;
+    public void setPassport(String passport) {
+        this.passport = passport;
     }
 
     @Override

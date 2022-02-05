@@ -5,7 +5,7 @@ import java.util.List;
 public class Room extends Manage{
     private int amountOfPerson;
     private int roomNumber;
-    private List<Person> persons;
+    protected List<Person> persons;
     public Room(){
         persons = new ArrayList<Person>();
     }
@@ -36,7 +36,17 @@ public class Room extends Manage{
     public void setPersons(List<Person> persons) {
         this.persons = persons;
     }
-    
+
+    public void deletePersonByPassport(String passport){
+        Person person = this.persons.stream().filter(o -> o.getPassport().equals(passport)).findFirst().orElse(null);
+        if(person != null){
+            System.out.println(person.toString());
+            this.persons.remove(person);
+        }
+    }
+    public void deletePersonByRoom(){
+        persons.clear();
+    }
     @Override
     public String toString() {
         return " Room number: " + roomNumber +  ", information of the persons in the room: \n"

@@ -1,25 +1,31 @@
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Manage {
     public static final int ROOM_OF_NUMBERS = 20;
-    public HashMap<Integer, Boolean> listRoom;
+    private List<Room> rooms;
 
     public Manage(){
-        listRoom = new HashMap<Integer, Boolean>();
-        for(int i = 0; i < ROOM_OF_NUMBERS; i++ ){
-            listRoom.put(i,false);
+        rooms = new ArrayList<>();
+    }
+    public void addPerson(Room room){
+        this.rooms.add(room);
+    }
+
+    public Boolean deleteInformationOfPersonByPassport(int roomNumber){
+        Room room = this.rooms.stream().filter(o -> o.getRoomNumber() == roomNumber).findFirst().orElse(null);
+
+        if(room == null){
+            return false;
+        }
+        else {
+            this.rooms.remove(room.)
         }
     }
-
-    public HashMap<Integer, Boolean> getListRoom() {
-        return listRoom;
+    @Override
+    public String toString() {
+        return "information: " + rooms.toString();
     }
 
-    public void setListRoom(HashMap<Integer, Boolean> listRoom) {
-        this.listRoom = listRoom;
-    }
 
-    public void addRoom(Room room) {
-        this.listRoom.put(room.getRoomNumber(), true);
-    }
 }
