@@ -1,13 +1,13 @@
 public class Person {
     protected String fullname;
     protected String age;
-    protected String identityCardNumber;
+    protected String passport;
 
     
     public Person(String fullname, String age, String identityCardNumber) {
         this.fullname = fullname;
         this.age = age;
-        this.identityCardNumber = identityCardNumber;
+        this.passport = identityCardNumber;
     }
 
     public String getFullname() {
@@ -23,14 +23,14 @@ public class Person {
         this.age = age;
     }
     public String getIdentityCardNumber() {
-        return identityCardNumber;
+        return passport;
     }
     public void setIdentityCardNumber(String identityCardNumber) {
-        this.identityCardNumber = identityCardNumber;
+        this.passport = identityCardNumber;
     }
 
     @Override
     public String toString() {
-        return "information of customer [ Fullname: "  + fullname + ", age: " + age + ", identity card number: " + identityCardNumber + "]";
+        return "information of customer [ Fullname: "  + fullname + ", age: " + age + ", identity card number: " + passport + "]";
     }
 }
